@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import db from '../db/db.js'
+import ItensPedidos from "./ItensPedidos.js";
 
 const Produtos = db.define('Produtos' ,{
   id: {
@@ -22,6 +23,14 @@ const Produtos = db.define('Produtos' ,{
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   }
+})
+
+Produtos.hasMany(ItensPedidos, {
+  foreignKey: 'produtoId'
+})
+
+ItensPedidos.belongsTo(Produtos, {
+  foreignKey: 'produtoId'
 })
 
 export default Produtos

@@ -6,6 +6,8 @@ import { fileURLToPath } from 'url';
 import db from './db/db.js'
 import mesasRoutes from './router/mesasRoutes.js'
 import produtosRoutes from './router/produtosRoutes.js'
+import pedidosRoutes from './router/pedidosRoutes.js'
+import itensPedidosRoutes from './router/itensPedidosRoutes.js'
 
 const app = express()
 
@@ -18,6 +20,8 @@ app.use(express.urlencoded({extended:true}))
 // Routes
 app.use('/api/mesas', mesasRoutes)
 app.use('/api/produtos', produtosRoutes)
+app.use('/api/pedidos', pedidosRoutes)
+app.use('/api/itens', itensPedidosRoutes)
 
 //Arquivos estáticosa
 const __filename = fileURLToPath(import.meta.url)

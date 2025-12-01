@@ -1,5 +1,6 @@
 import db from '../db/db.js'
 import { DataTypes } from 'sequelize'
+import Pedidos from './Pedidos.js'
 
 const Mesas = db.define('Mesas', {
   id: {
@@ -18,5 +19,14 @@ const Mesas = db.define('Mesas', {
     defaultValue: 'disponivel',
   },
 })
+
+Mesas.hasMany(Pedidos, {
+  foreignKey: 'mesaId'
+})
+
+Pedidos.belongsTo(Mesas, {
+  foreignKey: 'mesaId'
+})
+
 
 export default Mesas
