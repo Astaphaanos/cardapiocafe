@@ -15,7 +15,6 @@ class ItensPedidosController {
       }
 
       return res.status(200).json({itens})
-
     } catch (error) {
       return res.status(500).json({error: error.message, message: "Erro ao buscar itens do pedido"});
     }

@@ -15,6 +15,7 @@ class ProdutosController {
     if(!produtos) {
       return res.status(400).json({message: "Erro ao registrar produtos"})
     }
+
     return res.status(201).json({message: "Produto criado com sucesso", produtos})
     } catch (error) {
       return res.status(500).json({error: error.message ,message: 'Erro na API'})
@@ -28,6 +29,7 @@ class ProdutosController {
       if(!produtos) {
         return res.status(400).json({message: "Erro ao listar produtos"})
       }
+
       return res.status(200).json(produtos)
     } catch (error) {
       return res.status(500).json({error: error.message ,message: 'Erro na API'})
@@ -46,6 +48,7 @@ class ProdutosController {
       if(!produto) {
         return res.status(400).json({message: "Produto não encontrado"})
       }
+
       return res.status(200).json(produto)
     } catch (error) {
        return res.status(500).json({error: error.message ,message: 'Erro na API'})
@@ -60,10 +63,12 @@ class ProdutosController {
       if(!id) {
         return res.status(400).json({message: "ID não informado"})
       }
+
       const produto = Produtos.findOne({where: {id}})
       if(!produto) {
-          return res.status(400).json({message: "Produto não encontrado"})
-        }
+        return res.status(400).json({message: "Produto não encontrado"})
+      }
+
       return res.status(200).json(produto)
     } catch (error) {
       return res.status(500).json({error: error.message ,message: 'Erro na API'})
@@ -77,6 +82,8 @@ class ProdutosController {
       if (!id) {
         return res.status(400).json({message: "ID não informado"})
       }
+
+      // verificação dos campos
       if(!nome || !categoria || !preco) {
         return res.status(400).json({message: 'Preencha todos os campos'})
       }
@@ -85,8 +92,8 @@ class ProdutosController {
       if(!produtos) {
         return res.status(400).json({message: "Erro ao modificar o produto"})
       }
-      return res.status(201).json(produtos)
-      
+
+      return res.status(201).json({message: "Produto alterado com sucesso!", produtos})
     } catch (error) {
       return res.status(500).json({error: error.message ,message: 'Erro na API'})
     }
@@ -102,7 +109,6 @@ class ProdutosController {
 
       await Produtos.destroy({where: {id}})
       return res.status(200).json({message: "Produto excluído com sucesso!"})
-
     } catch (error) {
       return res.status(500).json({error: error.message ,message: 'Erro na API'})
     }

@@ -11,7 +11,6 @@ import itensPedidosRoutes from './router/itensPedidosRoutes.js'
 
 const app = express()
 
-
 // Middlewares
 app.use(cors())
 app.use(express.json())

@@ -7,15 +7,4 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
   dialect: 'mysql'
 })
 
-/* async function testConnection() {
-  try {
-    await sequelize.authenticate()
-    console.log('Conexão com o banco estabelecida com sucesso!')
-  } catch (err) {
-    console.error('Não foi possível conectar ao banco:', err)
-  }
-}
-
-testConnection()
- */
 export default sequelize

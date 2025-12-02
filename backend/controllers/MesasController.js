@@ -2,7 +2,7 @@ import Mesas from '../models/Mesas.js'
 
 class MesasController {
 
-  //* CREATE: registrando a mesa
+  //* registrando a mesa
   static async registrarMesas(req,res) {
     const {numeroMesa} = req.body
 
@@ -25,19 +25,20 @@ class MesasController {
     }
   }
 
-  //* READ: listando as mesas
+  //* listando as mesas
   static async listarMesas(req,res) {
     try {
       const mesas = await Mesas.findAll()
       if(!mesas) {
         return res.status(400).json({message: 'Não existe nenhuma mesa registrada'})
       }
-      return res.status(201).json(mesas)
+      return res.status(200).json(mesas)
     } catch (error) {
        return res.status(500).json({error: error.message ,message: 'Erro na API'})
     }
   }
 
+  //* Pegando cada mesa individualmente
   static async getMesasById(req,res) {
     try {
       const {id} = req.params
@@ -49,18 +50,17 @@ class MesasController {
       if(!mesa) {
         return res.status(400).json({message: 'Erro ao buscar mesa'})
       }
-      return res.status(201).json({mesa})
+
+      return res.status(200).json({mesa})
     } catch (error) {
       return res.status(500).json({error: error.message ,message: 'Erro na API'})
     }
   }
 
-
-  //* DELETE: deletar a mesa individualmente
+  //* deletar a mesa individualmente
   static async deletarMesa(req,res) {
     try {
       const {id} = req.params
-
       if(!id) {
         return res.status(400).json({message: "ID não informado"})
       }
