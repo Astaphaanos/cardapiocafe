@@ -1,0 +1,12 @@
+:root {
+  --brown-dark: #4b2e16;
+  --caramel: #c9a27f;
+  --beige: #f3e5d8;
+  --white: #ffffff;
+  --gray-light: #f5f5f5;
+  --gray-medium: #9ca3af;
+  --text-dark: #1f2937;
+  --text-light: #7E644F;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}

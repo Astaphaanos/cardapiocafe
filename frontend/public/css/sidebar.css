@@ -1,0 +1,51 @@
+.sidebar {
+  width: 280px;
+  background-color: var(--brown-dark);
+  color: var(--white);
+  padding: 1.5rem 0;
+  position: fixed;
+  left: 0;
+  top: 90px;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+ul {
+   list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 8px 10px;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        text-decoration: none;
+        color: var(--beige);
+        font-size: 18px;
+        padding: 14px 12px;
+
+        border-radius: 12px;
+        transition: background 0.2s ease, transform 0.2s ease;
+
+        i {
+          width: 24px;
+          height: 24px;
+          color: var(--beige);
+        }
+
+        &:hover {
+          background-color: #64442A;
+          transform: translateX(4px);
+        }
+
+        &:focus {
+          background-color: #C9A27F;
+          color: var(--brown-dark);
+        }
+      }
+    }
+}

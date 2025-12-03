@@ -1,0 +1,64 @@
+
+.container {
+  h2 {
+    font-size: 40px;
+    padding: 6px 0;
+    color: var(--brown-dark);
+  }
+
+  p {
+    font-size: 18px;
+    padding-bottom: 40px;
+    color: var(--text-light);
+  }
+}
+
+.form-registrar-mesa {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  width: 700px;
+  height: auto;
+  padding: 50px;
+  border-radius: 20px;
+
+
+  label {
+    color: var(--brown-dark);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 20px;
+    font-size: 16px;
+    border: 1px solid var(--brown-dark);
+    transition: border 0.2s ease, outline 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border: 2px solid var(--caramel);
+      box-shadow: 0 0 0 2px #c9a27f62
+      
+    }
+  }
+
+  button {
+    margin-top: 30px;
+    padding: 16px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--brown-dark);
+    color: var(--beige);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #5D422D;
+    }
+  }
+}
