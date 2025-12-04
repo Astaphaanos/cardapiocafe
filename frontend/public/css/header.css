@@ -38,16 +38,15 @@
       a {
         text-decoration: none;
         color: var(--brown-dark);
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: 500;
-        padding: 16px 24px;
+        padding: 10px 22px;
 
         &:hover{
           background-color: #5e38163d;
           border-radius: 14px;
         }
       }
-
     }
   }
 }

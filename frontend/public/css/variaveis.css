@@ -9,4 +9,12 @@
   --text-light: #7E644F;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  --ocupada-bg: #ffd6d6;
+  --ocupada-text-color:  #8b0000;
+  --ocupada-border-color: #ffb3b3;
+
+  --livre-bg: #dff7e6;
+  --livre-text-color:  #0b6b2f;
+  --livre-border-color: #bff0c9;
 }

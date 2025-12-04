@@ -1,0 +1,103 @@
+.container {
+  h1 {
+    color: var(--brown-dark);
+    padding-bottom: 8px;
+  }
+
+  p {
+    color: var(--text-light);
+    padding-bottom: 40px;
+  }
+}
+
+#mesas-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.mesa-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  border-radius: 20px;
+  padding: 20px;
+  height: 200px;
+  
+  
+  background: var(--white);
+  text-align: center;
+  border: 1px solid var(--brown-dark);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  span {
+    position: absolute;
+    top: 26px;
+    right: 24px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  h2 {
+    background: var(--beige);
+    padding: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--brown-dark);
+  }
+
+  p {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--brown-dark);
+    font-weight: bold;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Verde - Disponível */
+.mesa-card.livre span {
+  background-color: var(--livre-bg);
+  color: var(--livre-text-color);
+  border: 1px solid var(--livre-border-color);
+}
+
+/* Vermelho - Ocupada */
+.mesa-card.ocupada span {
+  background-color: var(--ocupada-bg);
+  color: var(--ocupada-text-color);
+  border: 1px solid var(--ocupada-border-color);
+}
+
+/* Card escuro quando ocupada */
+.mesa-card.ocupada {
+  background: var(--brown-dark);
+  border: 3px solid var(--brown-dark);
+
+  h2 {
+     background: var(--caramel);
+  }
+
+  p {
+    color: var(--beige);
+  }
+}

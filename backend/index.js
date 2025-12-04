@@ -28,7 +28,7 @@ const __dirname = path.dirname(__filename)
 app.use(express.static(path.join(__dirname, "../frontend/public/pages")))
 
 // Conexão com banco de dados
-db.sync().then(() => {
+db.sync({force: true}).then(() => {
     console.log('Conectado ao Banco de Dados...')
     app.listen(3000)
 }).catch((error) => console.log(error))

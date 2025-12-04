@@ -15,8 +15,8 @@ const Mesas = db.define('Mesas', {
   },
 
   status: {
-    type: DataTypes.ENUM('disponivel', 'ocupada'),
-    defaultValue: 'disponivel',
+    type: DataTypes.ENUM('livre', 'ocupada'),
+    defaultValue: 'livre',
   },
 })
 

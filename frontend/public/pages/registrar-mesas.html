@@ -19,16 +19,17 @@
         <h2>Registrar Mesa</h2>
         <p>Adicione uma nova mesa ao sistema</p>
 
-        <form class="form-registrar-mesa">
+        <form id="form-registrar-mesa">
             <label for="numeroMesa">Número da Mesa</label>
-            <input type="number" name="numeroMesa" required placeholder="Ex: 1">
+            <input type="number" name="numeroMesa" id="inputNumeroMesa" required placeholder="Ex: 1">
 
             <button type="submit">Registrar Mesa</button>
         </form>
 
       </section>
     </main>
-
+  
+  <script type="module" src="../js/registrarMesa.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../scripts/loadComponents.js"></script>
 </body>
