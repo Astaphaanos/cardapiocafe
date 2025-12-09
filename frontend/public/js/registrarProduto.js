@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
           alert('✅ Produto criado com sucesso')
           console.log(result)
           formProduto.reset()
-          // window.location.href = '../pages/lista-produtos.html'
+          window.location.href = '../pages/lista-produtos.html'
         } else {
           alert('⚠️ Erro ao criar a mesa. Tente mais tarde!')
         }

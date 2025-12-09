@@ -40,3 +40,54 @@ export async function listarMesas() {
     throw new Error("Erro ao conectar com a API");
   }
 }
+
+//* Listar produtos (na lista de produtos)
+export async function listarProdutos() {
+  try {
+    const res = await fetch(`${BASE_URL}/api/produtos/listar`)
+    return res.json()
+  } catch (error) {
+    console.log("Erro ao conectar com a API", error);
+    throw new Error("Erro ao conectar com a API");
+  }
+}
+
+//* Deletar produtos (na lista de produtos)
+export async function deletarProdutos(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/api/produtos/deletar/${id}`, {
+      method: "DELETE"
+    });
+    return res.json()
+  } catch (error) {
+    console.log("Erro ao conectar com a API", error);
+    throw new Error("Erro ao conectar com a API");
+  }
+}
+
+//* Editar produto (na lista de produtos)
+export async function buscarProdutoPorId(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/api/produtos/${id}`)
+    return res.json()
+  } catch (error) {
+    console.log("Erro ao conectar com a API", error);
+    throw new Error("Erro ao conectar com a API");
+  }
+}
+
+export async function editarProduto(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/api/produtos/editar/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dados)
+    })
+    return res.json()
+  } catch (error) {
+    console.log("Erro ao conectar com a API", error);
+    throw new Error("Erro ao conectar com a API");
+  }
+}

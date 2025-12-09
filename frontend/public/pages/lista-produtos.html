@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/lista-produto.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Lista Produtos</title>
+</head>
+<body>
+  <div id="navbar"></div>
+    <div id="sidebar"></div>
+
+    <main>
+      <section class="container">
+        <div class="produtos-header">
+
+          <div class="produtos-header-info">
+            <h1>Lista de Produtos</h1>
+            <p>Gerencie os Produtos do cardápio</p>
+
+            <input type="text" placeholder="Buscar produto..." class="produtos-header-search">
+          </div>
+
+          <div class="produtos-header-actions">
+            <a href="./registrarProduto.html">Novo Produto</a>
+          </div>
+
+        </div>
+        <div id="produtos-lista"></div>
+
+      </section>
+    </main>
+
+    <script type="module" src="../js/listarProdutos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../scripts/loadComponents.js"></script>
+</body>
+</html>

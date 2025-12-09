@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/registrar-produto.css">
+  <title>Editar Mesas</title>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div id="sidebar"></div>
+
+  <main>
+      <section class="container">
+        <h2>Editar Produto</h2>
+        <p>Edite o produto escolhido no cardápio</p>
+
+        <form id="form-registrar-produto">
+            <input type="hidden" name="id" id="id">
+
+            <label for="nome">Nome do Produto</label>
+            <input type="text" name="nome" id="nomeProduto" required placeholder="Ex: Cappuccino">
+
+            <label for="categoria">Categoria</label>
+            <select name="categoria" id="categoriaProduto">
+              <option value="cafes">Cafés</option>
+              <option value="bebidas">Bebidas Frias</option>
+              <option value="doces">Doces</option>
+              <option value="salgados">Salgados</option>
+            </select>
+
+            <label for="preco">Preço (R$)</label>
+            <input type="text" name="preco" id="precoProduto" required placeholder="Ex: 7,50">
+
+            <button type="submit">Editar Produto</button>
+        </form>
+
+      </section>
+    </main>
+
+  <script type="module" src="../js/editarProduto.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../scripts/loadComponents.js"></script>
+</body>
+</html>
