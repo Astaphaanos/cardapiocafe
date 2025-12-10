@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async() => {
   const result = await listarProdutos()
 
   const produtoContainer = document.getElementById('produtos-lista')
+  produtoContainer.innerHTML = ''
 
   if(!Array.isArray(result)) {
     container.innerHTML = '<p>Erro ao carregar as mesas.</p>'
@@ -50,9 +51,9 @@ async function ativarDeletar(){
 
       if (res.ok) {
         alert("Produto deletado!");
-        listarProdutos(); 
+        btn.closest('.produto-card').remove()
       } else {
-        alert("Erro ao deletar.");
+        alert("Erro ao deletar");
       }
     })
   })

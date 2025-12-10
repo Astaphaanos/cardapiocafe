@@ -7,7 +7,7 @@ router.post('/registrar', ProdutosController.registrarProduto)
 router.get('/listar', ProdutosController.listarProdutos)
 router.get('/:id', ProdutosController.getProdutosById)
 router.get('/editar/:id', ProdutosController.editandoProduto)
-router.put('/editar', ProdutosController.salvandoEdicao)
+router.put('/editar/:id', ProdutosController.salvandoEdicao)
 router.delete('/deletar/:id', ProdutosController.deletarProduto)
 
 export default router

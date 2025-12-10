@@ -15,7 +15,7 @@ const Produtos = db.define('Produtos' ,{
   },
 
   categoria: {
-    type: DataTypes.ENUM('Cafés', 'Salgados', 'Doces'),
+    type: DataTypes.ENUM('Cafés', 'Bebidas' , 'Salgados', 'Doces',),
     allowNull: false
   },
 

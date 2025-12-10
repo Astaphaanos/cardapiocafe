@@ -58,7 +58,7 @@ export async function deletarProdutos(id) {
     const res = await fetch(`${BASE_URL}/api/produtos/deletar/${id}`, {
       method: "DELETE"
     });
-    return res.json()
+    return res
   } catch (error) {
     console.log("Erro ao conectar com a API", error);
     throw new Error("Erro ao conectar com a API");
@@ -76,7 +76,7 @@ export async function buscarProdutoPorId(id) {
   }
 }
 
-export async function editarProduto(id) {
+export async function editarProduto(id, dados) {
   try {
     const res = await fetch(`${BASE_URL}/api/produtos/editar/${id}`, {
       method: "PUT",
