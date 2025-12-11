@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', async() => {
     const card = document.createElement('div')
     card.className = 'mesa-card'
 
+    card.dataset.id = mesa.id
+
     const statusLower = mesa.status.toLowerCase()
     card.classList.add(statusLower)
 
@@ -24,4 +26,17 @@ document.addEventListener('DOMContentLoaded', async() => {
     `;
     container.appendChild(card)
   });
+
+  document.querySelectorAll('.mesa-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const status = card.dataset.status
+      const id = card.dataset.id
+
+      if(status === 'livre') {
+        window.location.href = `../pages/cardapio.html?mesa=${id}`
+      } else {
+         window.location.href = `../pages/pagamento.html?mesa=${id}`
+      }
+    })
+  })
 })

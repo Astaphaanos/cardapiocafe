@@ -1,0 +1,282 @@
+/* Layout Geral */
+.container {
+  padding: 2rem;
+  width: 100%;
+  padding: 0;
+}
+
+/* Header do cardápio*/
+.cardapio-header {
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--cor-texto-principal, var(--brown-dark));
+    margin-bottom: .3rem;
+  }
+
+  p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+}
+
+/* Botão Carrinho */
+.cardapio-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -3.5rem; 
+  margin-bottom: 2rem;
+}
+
+.btn-carrinho {
+  background: var(--brown-dark);
+  color: var(--white);
+  padding: .7rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: 0.2s ease;
+
+  &:hover{
+    opacity: .9;
+  }
+
+  i {
+    margin-right: .3rem;
+  }
+}
+
+/* Filtros */
+.filtros-categorias {
+  display: flex;
+  gap: .8rem;
+  margin-bottom: 2rem;
+}
+
+.filtro-btn {
+  background: var(--white);
+  border: 1px solid var(--beige);
+  padding: .5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .9rem;
+  transition: .2s;
+
+  &:hover {
+    background: var(--caramel);
+  }
+
+  &:active, &:focus{
+    background: var(--brown-dark);
+    color: var(--white);
+    border-color: var(--brown-dark);
+  }
+}
+
+/* Lista de produtos  */
+#cardapio-lista {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.8rem;
+}
+
+/*  Card do produto */
+.cardapio-card {
+  background:var(--white);
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  transition: 0.2s ease;
+  border: 1px solid rgba(150, 125, 100, 0.15);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--brown-dark);
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text-light);
+  }
+
+  button {
+    margin-top: auto;
+    background: var(--btn-cardapio);
+    border: none;
+    padding: .6rem 1rem;
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    transition: 0.2s;
+
+    &:hover{
+      background: var(--btn-cardapio-hover);
+    }
+  }
+}
+
+/* Modal do carrinho*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+}
+
+
+/* Item do carrinho */
+.item-carrinho {
+  background: #f3e2d3;
+  padding: 16px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Header do item (nome + botão remover) */
+.item-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #5b3a29;
+  }
+
+  .preco-unit {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+}
+
+/* Botão remover */
+.remover-item {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #d9534f;
+  cursor: pointer;
+}
+
+/* Linha dos controles */
+.item-controles {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  button {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid #cc9f7a;
+    color: #5b3a29;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .quantidade {
+    font-size: 1.1rem;
+  }
+}
+
+.item-total {
+  margin-left: auto;
+  font-weight: 600;
+  color: #5b3a29;
+}
+
+/*  Rodapé total */
+.carrinho-total {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  background: #f3e2d3;
+  padding: 16px 22px;
+  border-top: 2px solid #d3b79e;
+
+  .linha {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+}
+
+.btn-confirmar {
+  width: 100%;
+  padding: 12px;
+  background: #5b3a29;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .cardapio-actions {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .filtros-categorias {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

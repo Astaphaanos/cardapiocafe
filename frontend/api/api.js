@@ -41,6 +41,17 @@ export async function listarMesas() {
   }
 }
 
+//* Pegar mesa individualmente
+export async function pegarMesaPorId(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/api/mesas/${id}`)
+    return res.json()
+  } catch (error) {
+    console.log("Erro ao conectar com a API", error);
+    throw new Error("Erro ao conectar com a API");
+  }
+}
+
 //* Listar produtos (na lista de produtos)
 export async function listarProdutos() {
   try {
