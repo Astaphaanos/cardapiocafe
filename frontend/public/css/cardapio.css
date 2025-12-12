@@ -3,6 +3,7 @@
   padding: 2rem;
   width: 100%;
   padding: 0;
+  margin-top: 40px;
 }
 
 /* Header do cardápio*/
@@ -30,6 +31,7 @@
 }
 
 .btn-carrinho {
+  position: relative;
   background: var(--brown-dark);
   color: var(--white);
   padding: .7rem 1.4rem;
@@ -50,6 +52,22 @@
   i {
     margin-right: .3rem;
   }
+}
+
+.badge-count {
+  position: absolute;
+  top: -8px;
+  right:-4px;
+  background: var(--caramel);
+  color: #000;
+  font-size: 0.7rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
 /* Filtros */
@@ -155,6 +173,39 @@
   display: none;
 }
 
+.modal-footer {
+  border-top: 2px solid var(--caramel);
+  background-color: var(--beige);
+  padding: 20px;
+
+  .modal-footer-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-bottom: 20px;
+  }
+
+  .finalizar-pedido {
+    width: 100%;
+    background-color: var(--brown-dark);
+    color: var(--beige);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--btn-hover-geral);
+    }
+  }
+}
+
+.modal-footer.hidden{
+   display: none
+}
+
 .modal-content {
   width: 90%;
   max-width: 500px;
@@ -163,6 +214,27 @@
   padding: 20px;
   position: relative;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+
+}
+
+.modal-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--beige);
+  
+  .fechar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-bottom: 10px;
+
+    &:hover {
+      background-color: var(--beige);
+      border-radius: 100%;
+    }
+  }
 
   h3 {
     font-size: 1.4rem;
@@ -179,6 +251,7 @@
   border-radius: 20px;
   margin-bottom: 18px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  margin-top: 10px;
 }
 
 /* Header do item (nome + botão remover) */

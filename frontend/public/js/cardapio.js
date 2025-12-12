@@ -26,8 +26,8 @@ function renderizarProdutos(lista) {
     `;
 
     card.querySelector('button').addEventListener('click', () => {
-      adicionarAoCarrinho(produto)
-    })
+      adicionarAoCarrinho(produto);
+    });
     
     containerCardapio.appendChild(card);
   });
@@ -41,12 +41,12 @@ botoes.forEach(btn => {
   btn.addEventListener('click', () => {
     const categoria = btn.dataset.categoria;
 
-    if (categoria === 'todos') {
-      renderizarProdutos(produtos);
-    } else {
-      const filtrados = produtos.filter(p => p.categoria === categoria);
-      renderizarProdutos(filtrados);
-    }
+      if (categoria === 'todos') {
+        renderizarProdutos(produtos);
+      } else {
+        const filtrados = produtos.filter(p => p.categoria === categoria);
+        renderizarProdutos(filtrados);
+      }
+    });
   });
-});
 }

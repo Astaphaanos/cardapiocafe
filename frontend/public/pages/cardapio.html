@@ -27,6 +27,7 @@
         <div class="cardapio-actions">
           <button type="button" class="btn-carrinho">
             <p><i class="fa-solid fa-cart-shopping"></i>Carrinho</p>
+            <span id="carrinho-count" class="badge-count">0</span>
           </button>
         </div>
 
@@ -42,12 +43,24 @@
 
         <div id="carrinho-modal" class="modal hidden">
           <div class="modal-content">
-            <h3>Carrinho</h3>
+
+            <div class="modal-header">
+              <h3>Carrinho</h3>
+              <button class="fechar">X</button>
+            </div>
+
             <div id="carrinho-itens"></div>
-            <button class="fechar">Fechar</button>
+
+            <div class="modal-footer" id="carrinho-footer">
+              <div class="modal-footer-total">
+                <p>Total</p>
+                <span class="modal-total" id="carrinho-total-preco">R$</span>
+              </div>
+              <button class="finalizar-pedido">Confirmar Pedido</button>
+            </div>
+            
           </div>
         </div>
-
       </section>
     </main>
 

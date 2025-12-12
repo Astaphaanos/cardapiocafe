@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', async() => {
     const card = document.createElement('div')
     card.className = 'mesa-card'
 
+    card.dataset.status = mesa.status
     card.dataset.id = mesa.id
 
     const statusLower = mesa.status.toLowerCase()
