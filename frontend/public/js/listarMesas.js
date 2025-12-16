@@ -3,6 +3,8 @@ import {listarMesas} from "../../api/api.js"
 document.addEventListener('DOMContentLoaded', async() => {
   const result = await listarMesas()
 
+  localStorage.setItem('mesas', JSON.stringify(result))
+
   const container = document.getElementById('mesas-container')
 
   if(!Array.isArray(result)) {
@@ -30,13 +32,17 @@ document.addEventListener('DOMContentLoaded', async() => {
 
   document.querySelectorAll('.mesa-card').forEach(card => {
     card.addEventListener('click', () => {
-      const status = card.dataset.status
-      const id = card.dataset.id
+      const mesaSelecionada = {
+        id: card.dataset.id,
+        status: card.dataset.status
+      }
 
-      if(status === 'livre') {
-        window.location.href = `../pages/cardapio.html?mesa=${id}`
+      localStorage.setItem('mesaSelecionada', JSON.stringify(mesaSelecionada))
+
+      if(mesaSelecionada.status === 'livre') {
+        window.location.href = `../pages/cardapio.html?mesa=${mesaSelecionada.id}`
       } else {
-         window.location.href = `../pages/pagamento.html?mesa=${id}`
+         window.location.href = `../pages/pagamento.html?mesa=${mesaSelecionada.id}`
       }
     })
   })

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/variaveis.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/confirmarPedido.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Cardápio</title>
+    <title>Confirmar Pedido</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="sidebar"></div>
+
+    <main>
+      <section id="container-confirmarPedido">
+
+        <div class="confirmar-header">
+          <button class="voltar"> <- </button>
+          <div>
+            <h1>Confirmar Pedido</h1>
+            <p>Mesa <span id="mesaId"></span></p>
+          </div>
+        </div>
+
+        <div class="pedido-card">
+          <div id="confirmar-itens"></div>
+  
+          <div id="pedido-resumo"></div>
+        </div>
+
+
+        <button id="btn-confirmarPedido" class="btn-finalizar"> Finalizar Pedido</button>
+      </section>
+    </main>
+
+    <script type="module" src="../js/confirmarPedido.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../scripts/loadComponents.js"></script>
+  </body>
+</html>

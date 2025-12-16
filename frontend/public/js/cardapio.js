@@ -1,6 +1,13 @@
 import { listarProdutos } from "../../api/api.js";
 import { adicionarAoCarrinho } from "./carrinho.js";
 
+
+const mesaId = localStorage.getItem('mesaSelecionada')
+if(!mesaId) {
+  alert('Nenhuma mesa selecionada')
+  window.location.href = '../pages/mesas.html'
+}
+
 let produtos = []; // para filtros
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -14,6 +21,7 @@ function renderizarProdutos(lista) {
   containerCardapio.innerHTML = '';
 
   lista.forEach(produto => {
+    const btnConfirma = document.getElementById('btn-confirmar')
     const card = document.createElement('div');
     card.className = 'cardapio-card';
 

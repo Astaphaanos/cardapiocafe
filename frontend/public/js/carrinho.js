@@ -3,18 +3,19 @@ let carrinho = []
 const carrinhoBtn = document.querySelector('.btn-carrinho')
 const modal = document.getElementById('carrinho-modal')
 const fecharModalBtn = modal.querySelector('.fechar')
+const btnConfirma = document.getElementById('btn-confirmar')
 
-// Abrir o modal
+//* Abrir o modal
 carrinhoBtn.addEventListener('click', () => {
   modal.classList.remove('hidden')
 })
 
-// Fechar o modal
+//* Fechar o modal
 fecharModalBtn.addEventListener('click', () => {
   modal.classList.add('hidden')
 })
 
-// Função para adicionar produto ao carrinho
+//* Função para adicionar produto ao carrinho
 export function adicionarAoCarrinho(produto) {
   const produtoExistente = carrinho.find((item) => item.id === produto.id)
 
@@ -30,7 +31,7 @@ export function adicionarAoCarrinho(produto) {
   atualizarBadge()
 }
 
-// Renderizar o carrinho
+//* Renderizar o carrinho
 function renderizarCarrinho() {
   const containerCarrinho = document.getElementById('carrinho-itens')
   const footer = document.getElementById('carrinho-footer')
@@ -78,7 +79,7 @@ function renderizarCarrinho() {
     })
 
     div.querySelector('.menos').addEventListener('click', () => {
-      if(item.quantidade > 1) {
+      if (item.quantidade > 1) {
         item.quantidade--
       } else {
         carrinho.splice(item, 1)
@@ -91,12 +92,35 @@ function renderizarCarrinho() {
       renderizarCarrinho()
     })
   })
-
-  totalSpan.textContent = `R$ ${total.toFixed(2)}`;
+  totalSpan.textContent = `R$ ${total.toFixed(2)}`
   atualizarBadge()
 }
 
-// Botões de adicionar ao carrinho
+//* Botão de Confirmar pedido
+btnConfirma.addEventListener('click', () => {
+  const mesaSelecionada = JSON.parse(localStorage.getItem('mesaSelecionada'))
+  if (!mesaSelecionada) {
+    alert('Mesa não encontrada')
+    return
+  }
+
+  const pedido = {
+    mesaId: mesaSelecionada.id,
+    status: 'aberto',
+    itens: carrinho.map((item) => ({
+      produtoId: item.id,
+      nome: item.nome,
+      preco: item.preco,
+      quantidade: item.quantidade,
+      subtotal: item.preco * item.quantidade
+    })),
+  }
+
+  localStorage.setItem('pedidoAtual', JSON.stringify(pedido))
+  window.location.href = '../pages/confirmarPedido.html'
+})
+
+//* Botões de adicionar ao carrinho
 export function ativarBotoesAdicionar(produtos) {
   const botoes = document.querySelectorAll('.cardapio-card button')
 
@@ -111,10 +135,6 @@ function atualizarBadge() {
   const badge = document.getElementById('carrinho-count')
 
   const totalItens = carrinho.reduce((sum, item) => sum + item.quantidade, 0)
-  badge.textContent = totalItens 
-  badge.style.display = totalItens > 0 ? "flex" : "none"
-}
-
-function renderizarFooter() {
-
+  badge.textContent = totalItens
+  badge.style.display = totalItens > 0 ? 'flex' : 'none'
 }
