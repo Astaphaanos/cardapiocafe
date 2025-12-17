@@ -3,7 +3,17 @@ import {listarMesas} from "../../api/api.js"
 document.addEventListener('DOMContentLoaded', async() => {
   const result = await listarMesas()
 
-  localStorage.setItem('mesas', JSON.stringify(result))
+  const mesasSalvas = JSON.parse(localStorage.getItem('mesas'))
+
+  const mesasAtualizadas = Array.isArray(mesasSalvas)
+    ? result.map(mesaApi => {
+        const mesaLocal = mesasSalvas.find(m => Number(m.id) === Number(mesaApi.id))
+        return mesaLocal ? mesaLocal : mesaApi
+      })
+    : result
+
+    localStorage.setItem('mesas', JSON.stringify(mesasAtualizadas))
+
 
   const container = document.getElementById('mesas-container')
 
@@ -12,15 +22,23 @@ document.addEventListener('DOMContentLoaded', async() => {
     return
   }
 
-  result.forEach(mesa => {
+  const mesas = JSON.parse(localStorage.getItem('mesas'))
+
+  mesas.forEach(mesa => {
     const card = document.createElement('div')
     card.className = 'mesa-card'
 
-    card.dataset.status = mesa.status
     card.dataset.id = mesa.id
+    card.dataset.status = mesa.status
 
-    const statusLower = mesa.status.toLowerCase()
-    card.classList.add(statusLower)
+    card.classList.remove('livre', 'ocupada')
+
+    if (mesa.status === 'ocupado') {
+      card.classList.add('ocupada')
+    } else {
+      card.classList.add('livre')
+    }
+
 
     card.innerHTML = `
       <span>${mesa.status}</span>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/pagamento.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Pagamento</title>
+</head>
+<body>
+
+  <header id="navbar"></header>
+  <aside id="sidebar"></aside>
+
+  <main class="main-content">
+
+    <!-- Cabeçalho da página -->
+    <header class="pagamento-header">
+      <h1>Pagamento</h1>
+
+      <div class="pagamento-header-info">
+        <p>Mesa <span id="mesaId"></span></p>
+        <span id="status-pedido" class="status status-aberto">Em aberto</span>
+      </div>
+    </header>
+
+    <div class="pagamento-container">
+
+      <!-- MÉTODO DE PAGAMENTO -->
+      <section class="metodo-pagamento-container" aria-labelledby="titulo-metodo-pagamento">
+        <h2 id="titulo-metodo-pagamento">
+          <i class="fa-solid fa-wallet" aria-hidden="true"></i>
+          Método de Pagamento
+        </h2>
+
+        <div class="metodos-grid">
+
+          <button class="metodo-pagamento-card ativo" data-metodo="dinheiro" type="button">
+            <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+            <span>Dinheiro</span>
+          </button>
+
+          <button class="metodo-pagamento-card" data-metodo="credito" type="button">
+            <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+            <span>Crédito</span>
+          </button>
+
+          <button class="metodo-pagamento-card" data-metodo="debito" type="button">
+            <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+            <span>Débito</span>
+          </button>
+
+          <button class="metodo-pagamento-card" data-metodo="pix" type="button">
+            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+            <span>Pix</span>
+          </button>
+
+        </div>
+      </section>
+
+      <!-- RESUMO -->
+      <section class="pagamento-resumo-container" aria-labelledby="titulo-resumo">
+        <h2 id="titulo-resumo">
+          <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+          Resumo
+        </h2>
+
+        <div id="pedido-resumo-total" class="resumo-lista"></div>
+
+        <div class="total-resumo">
+          <p>Total a pagar</p>
+          <strong id="total-pedidos">R$ 0,00</strong>
+        </div>
+
+        <button class="btn-confirmar-pagamento" type="button">
+          <i class="fa-solid fa-check" aria-hidden="true"></i>
+          Confirmar Pagamento
+        </button>
+      </section>
+
+      <!-- PRODUTOS -->
+      <section class="pagamento-produtos-container" aria-labelledby="titulo-produtos">
+        <h2 id="titulo-produtos">
+          <i class="fa-solid fa-box" aria-hidden="true"></i>
+          Produtos Selecionados
+        </h2>
+
+        <div id="produtos-selecionados" class="produtos-lista"></div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <script type="module" src="../js/pagamento.js"></script>
+  <script src="../scripts/loadComponents.js"></script>
+</body>
+</html>

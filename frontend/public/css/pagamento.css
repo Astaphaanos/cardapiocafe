@@ -1,0 +1,293 @@
+/* CABEÇALHO */
+
+.main-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.pagamento-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  h1 {
+    font-size: 2.2rem;
+    color: var(--brown-dark);
+  }
+}
+
+.pagamento-header-info {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.status {
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background-color: var(--livre-bg);
+  color: var(--livre-text-color);
+  border: 1px solid var(--livre-border-color);
+}
+
+/* GRID PRINCIPAL */
+
+.pagamento-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* CARDS GERAIS */
+
+section {
+  background-color: var(--white);
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-lg);
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--brown-dark);
+
+    i {
+      color: var(--btn-cardapio);
+    }
+  }
+}
+
+/* MÉTODO DE PAGAMENTO */
+
+.metodos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.metodo-pagamento-card {
+  border: 1.5px solid var(--caramel);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background-color: var(--white);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+
+  font-weight: 500;
+  color: var(--brown-dark);
+
+  transition: all 0.2s ease;
+
+  i {
+    font-size: 1.4rem;
+  }
+
+  &:hover {
+    background-color: var(--gray-light);
+  }
+}
+
+/* Ativo */
+.metodo-pagamento-card.ativo {
+  background-color: var(--btn-cardapio);
+  color: var(--white);
+  border-color: var(--btn-cardapio);
+
+  i {
+    color: var(--white);
+  }
+}
+
+/* RESUMO */
+
+/* Container do resumo */
+#pedido-resumo-total,
+#pedido-resumo {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Linhas do resumo */
+.resumo-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Total destacado */
+.resumo-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-light);
+
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+.pagamento-resumo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.resumo-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.resumo-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+
+  span::last-child {
+    font-weight: 500;
+  }
+}
+
+.total-resumo {
+  border-top: 1px solid var(--caramel);
+  padding-top: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  strong {
+    font-size: 1.4rem;
+    color: var(--brown-dark);
+  }
+}
+
+/* Botão confirmar */
+.btn-confirmar-pagamento {
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: none;
+
+  background-color: var(--btn-cardapio);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--btn-cardapio-hover);
+
+  }
+}
+
+/* PRODUTOS SELECIONADOS */
+.pagamento-produtos-container {
+  grid-column: 1 / 2;
+}
+
+.produtos-lista {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container geral dos produtos */
+#produtos-selecionados {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card do produto */
+.produto-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.produtos-selecionar-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid var(--beige);
+}
+
+.produto-info {
+  display: flex;
+  flex-direction: column;
+  padding-right: 60px;
+
+  p {
+    font-weight: 600;
+    color: var(--brown-dark);
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+}
+
+.produto-preco {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  p {
+    font-weight: 600;
+    color: var(--brown-dark);
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: var(--gray-medium);
+  }
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+  .pagamento-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pagamento-produtos-container {
+    grid-column: auto;
+  }
+}
