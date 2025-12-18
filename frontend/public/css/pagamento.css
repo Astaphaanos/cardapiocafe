@@ -38,7 +38,6 @@
 }
 
 /* GRID PRINCIPAL */
-
 .pagamento-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -47,7 +46,6 @@
 }
 
 /* CARDS GERAIS */
-
 section {
   background-color: var(--white);
   border-radius: 14px;
@@ -69,7 +67,6 @@ section {
 }
 
 /* MÉTODO DE PAGAMENTO */
-
 .metodos-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -112,8 +109,6 @@ section {
     color: var(--white);
   }
 }
-
-/* RESUMO */
 
 /* Container do resumo */
 #pedido-resumo-total,
@@ -281,7 +276,6 @@ section {
 }
 
 /* RESPONSIVO */
-
 @media (max-width: 900px) {
   .pagamento-container {
     grid-template-columns: 1fr;

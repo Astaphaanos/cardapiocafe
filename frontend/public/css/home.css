@@ -101,3 +101,88 @@
     color: var(--beige);
   }
 }
+
+/* Botão 3 pontinhos */
+.mesa-menu-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 10px;
+  border: 1.5px solid var(--beige);
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: var(--brown-dark);
+
+  transition: background-color 0.2s ease;
+}
+
+.mesa-menu-btn:hover {
+  background-color: var(--beige);
+}
+
+/* Ajuste quando ocupada */
+.mesa-card.ocupada .mesa-menu-btn {
+  border-color: var(--beige);
+  color: var(--beige);
+}
+
+/* Menu flutuante */
+.mesa-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+
+  padding: 6px 0;
+  min-width: 180px;
+
+  z-index: 20;
+}
+
+/* Itens do menu */
+.mesa-menu-item {
+  width: 100%;
+  background: none;
+  border: none;
+
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  color: var(--brown-dark);
+}
+
+.mesa-menu-item i {
+  font-size: 14px;
+}
+
+/* Hover */
+.mesa-menu-item:hover {
+  background-color: var(--gray-light);
+}
+
+/* Deletar em vermelho */
+.mesa-menu-item.deletar {
+  color: #d11a2a;
+}
+
+.hidden {
+  display: none;
+}
