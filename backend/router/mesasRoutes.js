@@ -6,6 +6,8 @@ const router = Router()
 router.post('/registrar', MesasController.registrarMesas)
 router.get('/listar', MesasController.listarMesas)
 router.get('/:id', MesasController.getMesasById)
-router.delete('/delete/:id', MesasController.deletarMesa)
+router.get('/editar/:id', MesasController.editandoMesa)
+router.put('/editar/:id', MesasController.salvandoEdicaoMesa)
+router.delete('/deletar/:id', MesasController.deletarMesa)
 
 export default router

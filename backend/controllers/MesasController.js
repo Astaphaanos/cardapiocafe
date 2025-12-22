@@ -57,6 +57,56 @@ class MesasController {
     }
   }
 
+  //* Editando produto: pegando pelo ID
+  static async editandoMesa(req, res) {
+    try {
+      const { id } = req.params
+      if (!id) {
+        return res.status(400).json({ message: 'ID não informado' })
+      }
+
+      const mesa = await Mesas.findOne({ where: { id } })
+      if (!mesa) {
+        return res.status(400).json({ message: 'Mesa não encontrada' })
+      }
+
+      return res.status(200).json(mesa)
+    } catch (error) {
+      return res.status(500).json({ error: error.message, message: 'Erro na API' })
+    }
+  }
+
+  //* Editando produto: salvando os dados no db
+  static async salvandoEdicaoMesa(req, res) {
+    try {
+      const { id } = req.params
+      const {numeroMesa} = req.body
+      if (!id) {
+        return res.status(400).json({ message: 'ID não informado' })
+      }
+
+      if (!numeroMesa) {
+        return res.status(400).json({ message: 'Preencha todos os campos' })
+      }
+
+      const mesa = await Mesas.findOne({ where: { id } })
+
+      if (!mesa) {
+        return res.status(404).json({ message: 'Mesa não encontrado' })
+      }
+
+      await Mesas.update({numeroMesa}, { where: { id } })
+      
+      const mesaAtualizada = await Mesas.findOne({ where: { id } })
+
+      return res
+        .status(201)
+        .json({ message: 'Mesa alterado com sucesso!',  mesaAtualizada })
+    } catch (error) {
+      return res.status(500).json({ error: error.message, message: 'Erro na API' })
+    }
+  }
+
   //* deletar a mesa individualmente
   static async deletarMesa(req,res) {
     try {
